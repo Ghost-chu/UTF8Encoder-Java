@@ -143,7 +143,8 @@ public class FileScanner {
 			if (file.isDirectory()) {
 				//filePathList.add(file.getPath() + " <------------这是文件夹");
 				if(file.getAbsolutePath().equals(Executor.bak_root.getAbsolutePath())) //排除备份目录
-					getAllFilePaths(file, filePathList);
+					continue;
+				getAllFilePaths(file, filePathList);
 			} else {
 				filePathList.add(file.getPath());
 				UTF8Encoder.echo("正在扫描文件结构 >> "+file.getPath());
